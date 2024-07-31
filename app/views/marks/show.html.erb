@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+<div class="d-flex align-items-center justify-content-between mb-5">
+  <%= link_to "Edit this mark", edit_mark_path(@mark), class: 'button-4' %> 
+  <%= link_to "Back to marks", marks_path, class: 'button-4' %>
+</div>
+<%= render @mark %>
+
+
+<div class="mt-5">
+  <%= button_to "Destroy this mark", @mark, method: :delete, class: 'button-4' %>
+</div>

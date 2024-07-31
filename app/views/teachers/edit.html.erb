@@ -1,0 +1,10 @@
+<h1>Editing teacher</h1>
+
+<%= render "form", teacher: @teacher %>
+
+<br>
+
+<div class="d-flex align-items-center justify-content-between">
+  <%= link_to "Show this teacher", @teacher, class: 'button-4' %> 
+  <%= link_to "Back to teachers", teachers_path, class: 'button-4' %>
+</div>

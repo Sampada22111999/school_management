@@ -1,0 +1,30 @@
+<div id="<%= dom_id mark %>">
+  <table class="table table-responsive">
+  <thead>
+    <tr>
+      <th>Student ID</th>
+      <th>Student Name</th>
+      <th>Teacher Name</th>
+      <th>Subject</th>
+      <th>Marks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= mark.student.id %></td>
+        <td><%= mark.student.name %></td>
+        <td><%= mark.teacher.name %></td>
+        <td><%= mark.subject %></td>
+        <td><%= mark.marks %></td>
+        <td><%= link_to 'Show', mark_path(mark),class: 'button-4' %></td>
+        <td><%= link_to 'Edit', edit_mark_path(mark),class: 'button-4' %></td>
+        <td><%= form_with model: mark, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'inline-form' do |form| %>
+              <%= form.submit 'Destroy', class: 'button-4', data: { confirm: 'Are you sure?' } %>
+            <% end %>
+        </td>        
+      </tr>
+  </tbody>
+</table>
+
+</div>

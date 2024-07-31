@@ -1,0 +1,10 @@
+<h1>Editing student</h1>
+
+<%= render "form", student: @student %>
+
+<br>
+
+<div class="d-flex align-items-center justify-content-between">
+  <%= link_to "Show this student", @student, class: 'button-4' %> 
+  <%= link_to "Back to students", students_path, class: 'button-4' %>
+</div>

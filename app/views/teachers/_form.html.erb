@@ -1,0 +1,28 @@
+<div class="card">
+<%= form_with(model: teacher) do |form| %>
+  <% if teacher.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+
+      <ul>
+        <% teacher.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, style: "display: block", class: 'form-label' %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :subject, style: "display: block", class: 'form-label' %>
+    <%= form.text_field :subject, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.submit 'Create Teacher', class: 'button-4' %>
+  </div>
+
+<% end %>
+</div>

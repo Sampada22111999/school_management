@@ -1,0 +1,29 @@
+<div id="<%= dom_id student %>">
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Grade</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td><%= student.id %></td>
+          <td><%= student.name %></td>
+          <td><%= student.email%></td>
+          <td><%= student.grade%></td>
+          <td><%= link_to 'Show', student_path(student),class: 'button-4' %></td>
+          <td><%= link_to 'Edit', edit_student_path(student),class: 'button-4' %></td>
+          <td><%= form_with model: student, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'inline-form' do |form| %>
+                <%= form.submit 'Destroy', class: 'button-4', data: { confirm: 'Are you sure?' } %>
+              <% end %>
+          </td>        
+        </tr>
+    </tbody>
+  </table>
+
+</div>
